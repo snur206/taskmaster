@@ -1,4 +1,5 @@
 # Lab 26
-![Home page](screenshots/Main.png)
-![All task](screenshots/allTask.png)
-![Add task](screenshots/addTask.png)
+![Task Master Home](screenshots/taskMasterHome.png)
+![All Task](screenshots/allTask.png)
+![Add Task](screenshots/addTask.png)
+![Add Task Hidden Submitted](screenshots/addTaskHidden.png)
