@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
             Button addTaskButton = (Button) findViewById(R.id.mainActivityAddTaskBtn);
 
             addTaskButton.setOnClickListener(v -> {
-                Intent goToAddTaskFromIntent = new Intent(MainActivity.this, AddTaskActivity.class);
+                Intent goToAddTaskFromIntent = new Intent(this, AddTaskActivity.class);
                 startActivity(goToAddTaskFromIntent);
             });
 
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
             Button allTaskButton = (Button)  findViewById(R.id.mainActivityAllTaskBtn);
 
             allTaskButton.setOnClickListener(v -> {
-                Intent goToAllTaskFromIntent = new Intent(MainActivity.this, AllTaskActivity.class);
+                Intent goToAllTaskFromIntent = new Intent(this, AllTaskActivity.class);
                 startActivity(goToAllTaskFromIntent);
             });
 
