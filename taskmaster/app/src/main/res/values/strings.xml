@@ -9,4 +9,9 @@
     <string name="taskTitle">Task Title:</string>
     <string name="tD">Task description</string>
     <string name="doSomething">Do something</string>
+    <string name="addTaskBtn">Add Task Button</string>
+    <string name="task_titleLabel">Task Title</string>
+    <string name="taskTitleHint">Task Hint</string>
+    <string name="taskDescriptionHint">Description Hint</string>
+    <string name="textViewSubmitted">Submitted!</string>
 </resources>

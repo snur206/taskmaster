@@ -14,13 +14,13 @@ public class AddTaskActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
 
-        Button addTaskButton = (Button) findViewById(R.id.AddTaskButton);
+        Button addTaskButton = (Button) findViewById(R.id.addTaskActivityBtn);
 
         addTaskButton.setOnClickListener(new View.OnClickListener() {
              @Override
             public void onClick(View v) {
-                 TextView nameTextView = (TextView) findViewById(R.id.addTaskText);
-                 nameTextView.setText("Submitted!");
+                 TextView submittedTextView = (TextView) findViewById(R.id.addTaskActivitySumittedTextView);
+                 submittedTextView.setVisibility(View.VISIBLE);
             }
         });
 

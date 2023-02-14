@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
             // Add Event Listener for clicking a button
             // TODO: Step 1: Get a UI element by ID
-            Button addTaskButton = (Button) findViewById(R.id.AddTaskButton);
+            Button addTaskButton = (Button) findViewById(R.id.mainActivityAddTaskBtn);
 
             addTaskButton.setOnClickListener(v -> {
                 Intent goToAddTaskFromIntent = new Intent(MainActivity.this, AddTaskActivity.class);
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             });
 
 
-            Button allTaskButton = (Button)  findViewById(R.id.AllTaskButton);
+            Button allTaskButton = (Button)  findViewById(R.id.mainActivityAllTaskBtn);
 
             allTaskButton.setOnClickListener(v -> {
                 Intent goToAllTaskFromIntent = new Intent(MainActivity.this, AllTaskActivity.class);
