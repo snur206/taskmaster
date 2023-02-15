@@ -42,22 +42,30 @@ public class MainActivity extends AppCompatActivity {
             Button taskButtonOne = (Button)  findViewById(R.id.mainActivityTaskOneBtn);
 
             taskButtonOne.setOnClickListener(v -> {
-                Intent goToTaskOneFromIntent = new Intent(this, TaskDetails.class);
-                startActivity(goToTaskOneFromIntent);
+                String taskDetail = ((TextView) findViewById(R.id.mainActivityTaskOneBtn)).getText().toString();
+                Intent goToTaskDetailFromIntent = new Intent(this, TaskDetails.class);
+                goToTaskDetailFromIntent.putExtra(TASK_INPUT_EXTRA_TAG, taskDetail);
+                startActivity(goToTaskDetailFromIntent);
             });
 
             Button taskButtonTwo = (Button)  findViewById(R.id.mainActivityTaskTwoBtn);
 
             taskButtonTwo.setOnClickListener(v -> {
-                Intent goToTaskTwoFromIntent = new Intent(this, TaskDetails.class);
-                startActivity(goToTaskTwoFromIntent);
+                String taskDetail = ((TextView) findViewById(R.id.mainActivityTaskTwoBtn)).getText().toString();
+                Intent goToTaskDetailFromIntent = new Intent(this, TaskDetails.class);
+                goToTaskDetailFromIntent.putExtra(TASK_INPUT_EXTRA_TAG, taskDetail);
+
+                startActivity(goToTaskDetailFromIntent);
             });
 
             Button taskButtonThree = (Button)  findViewById(R.id.mainActivityTaskThreeBtn);
 
             taskButtonThree.setOnClickListener(v -> {
-                Intent goToTaskThreeFromIntent = new Intent(this, TaskDetails.class);
-                startActivity(goToTaskThreeFromIntent);
+                String taskDetail = ((TextView) findViewById(R.id.mainActivityTaskThreeBtn)).getText().toString();
+                Intent goToTaskDetailFromIntent = new Intent(this, TaskDetails.class);
+                goToTaskDetailFromIntent.putExtra(TASK_INPUT_EXTRA_TAG, taskDetail);
+
+                startActivity(goToTaskDetailFromIntent);
             });
 
 
@@ -69,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(goToUserSettingsIntent);
             });
 
+
+            // Step 1-2 Grab the RecylcerView
+//            public void setUpRecyclerView = findViewById();
+            // Step 1-3 Set the layout manager
 
         }
     @Override

@@ -1,5 +1,6 @@
 package com.snur206.taskmaster;
 
+
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.Espresso.pressBack;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -32,14 +33,14 @@ import org.junit.runner.RunWith;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class PassingInputValueIntegrationTest {
+public class PassingInputValuesIntegrationTest {
 
     @Rule
     public ActivityScenarioRule<MainActivity> mActivityScenarioRule =
             new ActivityScenarioRule<>(MainActivity.class);
 
     @Test
-    public void passingInputValueIntegrationTest() {
+    public void passingInputValuesIntegrationTest() {
         ViewInteraction textView = onView(
                 allOf(withId(R.id.mainActivityTaskMasterTextView), withText("No Username"),
                         withParent(withParent(withId(android.R.id.content))),
@@ -54,17 +55,17 @@ public class PassingInputValueIntegrationTest {
                                         0),
                                 4),
                         isDisplayed()));
-        appCompatEditText.perform(click());
+        appCompatEditText.perform(replaceText("My Task"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText2 = onView(
-                allOf(withId(R.id.mainActivityUserInputEditText),
+                allOf(withId(R.id.mainActivityUserInputEditText), withText("My Task"),
                         childAtPosition(
                                 childAtPosition(
                                         withId(android.R.id.content),
                                         0),
                                 4),
                         isDisplayed()));
-        appCompatEditText2.perform(replaceText("My Task's"), closeSoftKeyboard());
+        appCompatEditText2.perform(pressImeActionButton());
 
         ViewInteraction appCompatImageView = onView(
                 allOf(withId(R.id.mainActivitySettingsImgView), withContentDescription("User settings"),
@@ -76,45 +77,13 @@ public class PassingInputValueIntegrationTest {
                         isDisplayed()));
         appCompatImageView.perform(click());
 
-        pressBack();
-
-        ViewInteraction appCompatEditText3 = onView(
-                allOf(withId(R.id.mainActivityUserInputEditText), withText("My Task's"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                4),
-                        isDisplayed()));
-        appCompatEditText3.perform(click());
-
-        ViewInteraction appCompatEditText4 = onView(
-                allOf(withId(R.id.mainActivityUserInputEditText), withText("My Task's"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                4),
-                        isDisplayed()));
-        appCompatEditText4.perform(pressImeActionButton());
-
-        ViewInteraction appCompatImageView2 = onView(
-                allOf(withId(R.id.mainActivitySettingsImgView), withContentDescription("User settings"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                3),
-                        isDisplayed()));
-        appCompatImageView2.perform(click());
-
         ViewInteraction textView2 = onView(
-                allOf(withId(R.id.userSettingsActivityInputTextView), withText("My Task's"),
+                allOf(withId(R.id.userSettingsActivityInputTextView), withText("My Task"),
                         withParent(withParent(withId(android.R.id.content))),
                         isDisplayed()));
-        textView2.check(matches(withText("My Task's")));
+        textView2.check(matches(withText("My Task")));
 
-        ViewInteraction appCompatEditText5 = onView(
+        ViewInteraction appCompatEditText3 = onView(
                 allOf(withId(R.id.userSettingsActivityUsernameEditTextView),
                         childAtPosition(
                                 childAtPosition(
@@ -122,9 +91,9 @@ public class PassingInputValueIntegrationTest {
                                         0),
                                 1),
                         isDisplayed()));
-        appCompatEditText5.perform(replaceText("Sharmarke"), closeSoftKeyboard());
+        appCompatEditText3.perform(replaceText("Sharmarke"), closeSoftKeyboard());
 
-        ViewInteraction appCompatEditText6 = onView(
+        ViewInteraction appCompatEditText4 = onView(
                 allOf(withId(R.id.userSettingsActivityUsernameEditTextView), withText("Sharmarke"),
                         childAtPosition(
                                 childAtPosition(
@@ -132,7 +101,7 @@ public class PassingInputValueIntegrationTest {
                                         0),
                                 1),
                         isDisplayed()));
-        appCompatEditText6.perform(pressImeActionButton());
+        appCompatEditText4.perform(pressImeActionButton());
 
         ViewInteraction materialButton = onView(
                 allOf(withId(R.id.userSettingsActivitySaveBtn), withText("Save"),
