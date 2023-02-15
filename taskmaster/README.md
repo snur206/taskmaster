@@ -1,4 +1,5 @@
 # Lab 26
+
 ![Task Master Home](screenshots/taskMasterHome.png)
 ![All Task](screenshots/allTask.png)
 ![Add Task](screenshots/addTask.png)
@@ -7,6 +8,7 @@
 This is an intro to Android Studios and adding two buttons that take you to different pages, add task that has a two edit text boxes and a button when hit shows a hidden text of "submitted!" and all task that has an image.
 
 # Lab 27
+
 ![Save Username Settings](screenshots/saveUsernameSettings.png)
 ![Home Page](screenshots/homePage.png)
 ![Task Details](screenshots/taskDetails.png)

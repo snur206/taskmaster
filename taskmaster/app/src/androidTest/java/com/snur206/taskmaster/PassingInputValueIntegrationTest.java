@@ -1,6 +1,5 @@
 package com.snur206.taskmaster;
 
-
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.Espresso.pressBack;
 import static androidx.test.espresso.action.ViewActions.click;
