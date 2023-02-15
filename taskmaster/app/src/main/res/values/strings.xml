@@ -14,4 +14,22 @@
     <string name="taskTitleHint">Task Hint</string>
     <string name="taskDescriptionHint">Description Hint</string>
     <string name="textViewSubmitted">Submitted!</string>
+    <string name="taskMasterUpdate">My Tasks</string>
+    <string name="codeChallenge">Code Challenge</string>
+    <string name="cC">CC</string>
+    <string name="labTask">Lab</string>
+    <string name="restTask">Rest</string>
+    <string name="settingBtn">User settings</string>
+    <string name="userName">Username</string>
+    <string name="usernameEditText">Input Username</string>
+    <string name="save">Save</string>
+    <string name="input">Input</string>
+    <string name="no_input">No Input</string>
+    <string name="taskOne">Task 1</string>
+    <string name="taskTwo">Task 2</string>
+    <string name="taskThree">Task 3</string>
+    <string name="taskDetails">"Task Details "</string>
+    <string name="taskDetailsBodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="taskDetailsbtnnn">Task 1</string>
+    <string name="taskDetailsBtn">Task Detail</string>
 </resources>
