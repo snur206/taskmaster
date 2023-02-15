@@ -11,4 +11,4 @@ This is an intro to Android Studios and adding two buttons that take you to diff
 ![Home Page](screenshots/homePage.png)
 ![Task Details](screenshots/taskDetails.png)
 
-Today's changes where to add three buttons that redirect to the task details page, add a settings to edit the username and onResume would display it w/o rerunning the app.
+Today's changes where to add three buttons that redirect to the task details page, add a settings to edit the username and onResume would display it w/o rerunning the app. Also inputted some test.
