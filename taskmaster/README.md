@@ -14,4 +14,11 @@ This is an intro to Android Studios and adding two buttons that take you to diff
 ![Task One](screenshots/taskOne.png)
 ![Task Two](screenshots/taskTwo.png)
 ![Task Three](screenshots/taskThree.png)
-Today's changes where to add three buttons that redirect to their own task details page, add a settings to edit the username and onResume would display it w/o rerunning the app. Also inputted some test.
+Today's changes were to add three buttons that redirect to their own task details page, add a settings to edit the username and onResume would display it w/o rerunning the app. Also inputted some test.
+
+# Lab 28
+![New Home Page](screenshots/RVHome.png)
+![Recycle View Task 1 Page](screenshots/RVTaskOne.png)
+![Recycle View Task 2 Page](screenshots/RVTaskTwo.png)
+![Recycle View Task 3 Page](screenshots/RVTaskThree.png)
+Today's changes were to refractor our code, getting rid of the buttons on the home page and replace them with Recycler View. Created packages for the activities, adapter, fragments, and model. Also added test to ensure that the Recycler View works.
