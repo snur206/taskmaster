@@ -1,8 +1,10 @@
-package com.snur206.taskmaster;
+package com.snur206.taskmaster.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.snur206.taskmaster.R;
 
 public class AllTaskActivity extends AppCompatActivity {
 
