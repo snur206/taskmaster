@@ -5,6 +5,7 @@ import static com.snur206.taskmaster.activities.UserSettingsActivity.USER_NAME_T
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,13 +18,19 @@ import android.widget.TextView;
 
 import com.snur206.taskmaster.R;
 import com.snur206.taskmaster.adapter.TaskRecyclerViewAdapter;
+import com.snur206.taskmaster.database.TaskMasterDatabase;
 import com.snur206.taskmaster.model.TaskModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-//    public final String TAG = "MainActivity";
+    TaskMasterDatabase taskMasterDatabase;
+    public static final String DATABASE_TITLE = "task_title";
+    List<TaskModel> taskModelsList = new ArrayList<>();
+    TaskRecyclerViewAdapter adapter;
+
+    //    public final String TAG = "MainActivity";
     public static final String TASK_INPUT_EXTRA_TAG = "userTask";
 
     //  TODO: Step 1-1: Add a RecyclerView in the WSYIWYG editor
@@ -32,6 +39,16 @@ public class MainActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
             setUpRecyclerView();
+
+            // Builder pattern
+            taskMasterDatabase = Room.databaseBuilder(
+                    getApplicationContext(),
+                    TaskMasterDatabase.class,
+                    DATABASE_TITLE)
+                    .fallbackToDestructiveMigration() // If Room gets confused, it tosses your database; don't use this in production!
+                    .allowMainThreadQueries()
+                    .build();
+            taskModelsList = taskMasterDatabase.taskDao().findAll();
 
             // Add Event Listener for clicking a button
             // TODO: Step 1: Get a UI element by ID
@@ -94,13 +111,7 @@ public class MainActivity extends AppCompatActivity {
 //  TODO: Step 1-2: Grab the RecylcerView
     public void setUpRecyclerView(){
         // TODO: Step 2-2: Make some data items
-        List<TaskModel> taskModelsList = new ArrayList<>();
-        TaskModel task1 = new TaskModel("Task 1", "Lab");
-        TaskModel task2 = new TaskModel("Task 2", "CC");
-        TaskModel task3= new TaskModel("Task 3", "Rest");
-        taskModelsList.add(task1);
-        taskModelsList.add(task2);
-        taskModelsList.add(task3);
+
 
         RecyclerView taskModelRecyclerView = findViewById(R.id.MainActivityRecyclerViewTaskModel);
 //      TODO: Step 1-3: Set the layout manager of the RecyclerView to a LinearLayoutManager
@@ -109,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         // TODO: Step 1-5: Create and attach the RecyclerView.Adapter
         // TODO: Step 2-3: Hand in some data items
         // TODO: Step 3-2: Hand in the Activity context
-        TaskRecyclerViewAdapter adapter = new TaskRecyclerViewAdapter(taskModelsList, this);
+        adapter = new TaskRecyclerViewAdapter(taskModelsList, this);
         taskModelRecyclerView.setAdapter(adapter);
 
 
@@ -122,5 +133,8 @@ public class MainActivity extends AppCompatActivity {
 
         String username = preferences.getString(USER_NAME_TAG, "No Username");
         ((TextView)findViewById(R.id.mainActivityTaskMasterTextView)).setText(username);
+        taskModelsList.clear();
+        taskModelsList.addAll(taskMasterDatabase.taskDao().findAll());
+        adapter.notifyDataSetChanged();
     }
 }
