@@ -45,16 +45,16 @@ public class TaskRecyclerViewAdapter extends RecyclerView.Adapter<TaskRecyclerVi
     // TODO: Step 2-4: Bind data items to Fragments inside of ViewHolders
     public void onBindViewHolder(@NonNull TaskViewHolder holder, int position) {
         TextView taskFragNameView = holder.itemView.findViewById(R.id.TaskFragmentTextViewName);
-        TextView taskFragTypeView = holder.itemView.findViewById(R.id.TaskFragTVType);
-        String taskTitleList = taskModelsList.get(position).getTitle();
-        String taskBodyList = taskModelsList.get(position).getBody();
-        taskFragNameView.setText(position + ". " + taskTitleList);
-        taskFragTypeView.setText(taskBodyList);
+        // TODO: Step 6-2: Refactor the rendering
+        TaskModel taskTitle = taskModelsList.get(position);
+        taskFragNameView.setText((position + 1) + ". " + taskTitle.getTitle()
+        + "/n" + taskTitle.getDescription() + "/n" + taskTitle.getDate()
+        );
         View taskViewHolder = holder.itemView;
         taskViewHolder.setOnClickListener(v -> {
             Intent goToTaskDetailsIntent = new Intent(callingActivity, TaskDetails.class);
-            goToTaskDetailsIntent.putExtra(TASK_TITLE_TAG, taskTitleList);
-            goToTaskDetailsIntent.putExtra(TASK_BODY_TAG, taskBodyList);
+            goToTaskDetailsIntent.putExtra(TASK_TITLE_TAG, taskTitle.getTitle());
+//            goToTaskDetailsIntent.putExtra(TASK_BODY_TAG, taskBodyList);
             callingActivity.startActivity(goToTaskDetailsIntent);
         });
     }
