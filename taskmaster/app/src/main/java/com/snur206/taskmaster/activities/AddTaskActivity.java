@@ -62,11 +62,11 @@ public class AddTaskActivity extends AppCompatActivity {
         // set OnClick listener on BTN
         findViewById(R.id.addTaskActivityBtn).setOnClickListener(v -> {
             // gather all info
-            TaskModel newTaskModel = new TaskModel(
+            TaskModel newTaskModel = new TaskModel (
                     ((EditText)findViewById(R.id.addTaskTitleEdit)).getText().toString(),
-                    ((EditText) findViewById(R.id.addTaskActivityTaskDecriptionEdit)).getText().toString(),
+                    TaskModel.TaskStateEnum.fromString(taskStateSpinner.getSelectedItem().toString()),
                     new Date(),
-                    TaskModel.TaskStateEnum.fromString(taskStateSpinner.getSelectedItem().toString(),)
+                    ((EditText) findViewById(R.id.addTaskActivityTaskDecriptionEdit)).getText().toString()
             );
             // Save it to the DB
             taskMasterDatabase.taskDao().insertTask(newTaskModel);

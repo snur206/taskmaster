@@ -85,9 +85,7 @@ public class TaskModel {
 
         @Override
         public String toString() {
-            return "TaskStateEnum{" +
-                    "taskBody='" + taskBody + '\'' +
-                    '}';
+            return taskBody;
         }
     }
 }
