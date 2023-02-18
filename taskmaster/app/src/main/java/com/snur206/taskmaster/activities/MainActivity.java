@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
-            setUpRecyclerView();
+
 
             // Builder pattern
             taskMasterDatabase = Room.databaseBuilder(
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(goToUserSettingsIntent);
             });
 
-
+        setUpRecyclerView();
         }
 
 //  TODO: Step 1-2: Grab the RecylcerView
@@ -135,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.mainActivityTaskMasterTextView)).setText(username);
         taskModelsList.clear();
         taskModelsList.addAll(taskMasterDatabase.taskDao().findAll());
+
         adapter.notifyDataSetChanged();
     }
 }
