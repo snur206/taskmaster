@@ -31,4 +31,4 @@ Today's changes were to refractor our code, getting rid of the buttons on the ho
 The changes made where to get rid of the hardcoded RecyclerView and place a spinner to add the tasks, you then are able to see those added task in the home page.
 
 # Lab 31
-Didn't add anything new already had tests made for each task that is on canvas for lab 31.
+Didn't add anything new, already had tests made for each task that is on canvas for lab 31.
