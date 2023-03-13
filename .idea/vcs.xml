@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/CodenameOne" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/GIT-Date" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/bitmap-transformer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/codefellowship" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/datahub" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/java-fundamentals" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/quotes" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/songr/SNsongr" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/statesAndCapitals" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/taskMasterAWS" vcs="Git" />
+  </component>
+</project>
